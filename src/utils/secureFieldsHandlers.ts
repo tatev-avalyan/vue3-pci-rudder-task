@@ -1,12 +1,12 @@
 import type { SecureFieldsHandlersProps } from "../types/secureFieldsType";
 
-export function setupSecureFieldsListeners({
+export const setupSecureFieldsListeners = ({
   instance,
   trackError,
   trackSubmission,
   formError,
   simulate3DSRedirect,
-}: SecureFieldsHandlersProps): void {
+}: SecureFieldsHandlersProps): void => {
   instance?.on("success", (data) => {
     formError.value = "";
     trackSubmission("success");
@@ -19,11 +19,10 @@ export function setupSecureFieldsListeners({
     formError.value = message;
     trackError("SecureFields", message);
     trackSubmission("failure");
-    alert("Error: " + formError.value);
   });
 }
 
-export function runTokenizationFlow({
+export const runTokenizationFlow = ({
   instance,
   month,
   year,
@@ -31,7 +30,7 @@ export function runTokenizationFlow({
   trackError,
   trackSubmission,
   simulate3DSRedirect,
-}: SecureFieldsHandlersProps & { month: string; year: string }): void {
+}: SecureFieldsHandlersProps & { month: string; year: string }): void => {
   let resolved = false;
 
   const failTimeout = setTimeout(() => {
@@ -39,7 +38,6 @@ export function runTokenizationFlow({
       formError.value = "Card processing failed. Please check your input.";
       trackError("SecureFields", formError.value);
       trackSubmission("failure");
-      alert("Error: " + formError.value);
     }
   }, 5000);
 
@@ -65,6 +63,5 @@ export function runTokenizationFlow({
     formError.value = message;
     trackError("SecureFields", message);
     trackSubmission("failure");
-    alert("Error: " + formError.value);
   });
 }

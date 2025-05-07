@@ -53,12 +53,15 @@
   };
 
   const validateForm = (): boolean => {
-    if (!cardholderName.value || !expiryMonth.value || !expiryYear.value) {
+    const isValid = cardholderName.value && expiryMonth.value && expiryYear.value;
+    const isValidExpDate = isValidExpirationDate({ month: expiryMonth.value, year: expiryYear.value });
+
+    if (!isValid) {
       showError("Form", "Missing required fields");
       return false;
     }
 
-    if (!isValidExpirationDate({ month: expiryMonth.value, year: expiryYear.value })) {
+    if (!isValidExpDate) {
       showError("Form", "Invalid expiration date");
       return false;
     }
@@ -87,6 +90,7 @@
 
   onMounted(() => {
     secureFieldsInstance.value = createSecureFields();
+
     if (!secureFieldsInstance.value) return;
 
     setupSecureFieldsListeners({
