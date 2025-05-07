@@ -1,0 +1,84 @@
+form {
+  width: 360px;
+  margin: 40px auto;
+  padding: 24px;
+  background-color: #f8f9fa;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-field {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+}
+
+input,
+.secure-field {
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: white;
+  color: black;
+  font-size: 14px;
+  transition: border-color 0.2s ease;
+}
+
+input:focus,
+.secure-field:focus-within {
+  border-color: #007bff;
+  outline: none;
+}
+
+.secure-field {
+  height: 42px;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+}
+
+input::placeholder {
+  color: #aaa;
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+  margin-top: -8px;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+/* Optional: Two-column layout for expiry */
+.form-field-group {
+  display: flex;
+  gap: 12px;
+}
+
+.form-field-group .form-field {
+  flex: 1;
+}

@@ -1,0 +1,38 @@
+.three-ds-result {
+  max-width: 400px;
+  margin: 100px auto;
+  padding: 32px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  border: 1px solid #e0e0e0;
+}
+
+h2 {
+  font-size: 22px;
+  color: #2e3a59;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 15px;
+  color: #444;
+  margin-bottom: 24px;
+}
+
+.continue-button {
+  background-color: #007bff;
+  color: white;
+  font-size: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.continue-button:hover {
+  background-color: #0056b3;
+}
